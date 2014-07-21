@@ -7,6 +7,14 @@ points.
 Designed for use with a microservice framework like Seneca
 or Hapi.
 
+### Requirements
+
+* Node v0.11.x and up OR traceur
+* Understanding of ES6 Generators
+* If using a testing framework, one that supports generators,
+  e.g. co-mocha
+
+
 ### Syntax
 
 Tentacle uses the EcmaScript 6 Generators syntax to 
@@ -40,12 +48,17 @@ that iterates chronologically over each `sucker` call
 in a child process.
 
 ```
-test('microservice first state should be successful', function () {
+test('microservice first state should be successful', function * () {
   var child = tentacle('path/to/microservice');
-  var process = child.next();
+  var process = yield child.next();
 
   assert('success', process.state);	
 })
+
+Notice we use the `yield` keyword with `child.next()`, and the
+test callback function is actually a generator (observe the asterisk `*`
+after `function`). This essentially freezes the the test until
+the asynchronous operations (`child.next`) is complete.
 
 ```
 
@@ -127,11 +140,12 @@ node --harmony mytests.js
 
 If you're using a test framework, you'll have to ensure
 that it supports a way to pass the harmony flag onto
-the node executable. For instance with mocha it would be
+the node executable. For instance with co-mocha it would be
 
 ```
 mocha --harmonly mytest.js
 ```
+
 
 #### Node v0.10.x
 We are able to run tests on Node v0.10.x (and possibly lower),
