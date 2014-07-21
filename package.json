@@ -9,6 +9,6 @@
   "author": "David Mark Clements",
   "license": "MIT",
   "devDependencies": {
-    "co-fork": "0.0.1"
+    "co-fork": "0.0.3"
   }
 }
