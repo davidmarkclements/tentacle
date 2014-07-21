@@ -1,5 +1,8 @@
+'use strict'
+
+function noop() {}
+
 if (!(process.send instanceof Function)) {
-  function noop() {}
   noop.fail = noop;
   noop.pass = noop;
   noop.attach = noop;
