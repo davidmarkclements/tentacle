@@ -54,13 +54,13 @@ test('microservice first state should be successful', function * () {
 
   assert('success', process.state);	
 })
+```
 
 Notice we use the `yield` keyword with `child.next()`, and the
 test callback function is actually a generator (observe the asterisk `*`
 after `function`). This essentially freezes the the test until
 the asynchronous operations (`child.next`) is complete.
 
-```
 
 
 #### sucker
@@ -143,7 +143,7 @@ that it supports a way to pass the harmony flag onto
 the node executable. For instance with co-mocha it would be
 
 ```
-mocha --harmonly mytest.js
+mocha --harmony mytest.js
 ```
 
 
