@@ -58,7 +58,7 @@ test('microservice first state should be successful', function * () {
 
 Notice we use the `yield` keyword with `child.next()`, and the
 test callback function is actually a generator (observe the asterisk `*`
-after `function`). This essentially freezes the the test until
+after `function`). This essentially freezes the test until
 the asynchronous operations (`child.next`) is complete.
 
 
