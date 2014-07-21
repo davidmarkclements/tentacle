@@ -20,7 +20,7 @@ sucker.fail = function fail () {
 }
 
 sucker.pass = function pass () {
-  sucker({state: sucker.SUCCESS, arguments: fail.caller.arguments}});
+  sucker({state: sucker.SUCCESS, arguments: pass.caller.arguments});
 }
 
 sucker.attach = function () {
