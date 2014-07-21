@@ -1,4 +1,4 @@
-var tentacle = require('./lib/tentacle');
-tentacle.sucker = require('./lib/sucker');
+var tentacle = require('./tentacle');
+tentacle.sucker = require('./sucker');
 
 module.exports = tentacle;
