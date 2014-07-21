@@ -1,0 +1,14 @@
+{
+  "name": "tentacle",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Mark Clements",
+  "license": "MIT",
+  "devDependencies": {
+    "co-fork": "0.0.1"
+  }
+}
